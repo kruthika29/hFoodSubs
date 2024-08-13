@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Food Subscriptions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        .plan {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px 0;
+        }
+        .plan h2 {
+            margin: 0 0 10px 0;
+        }
+        .plan p {
+            margin: 5px 0;
+        }
+        .plan button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .plan button:hover {
+            background-color: #218838;
+        }
+    </style>
+    <script src="https://js.chargebee.com/v2/chargebee.js" data-cb-site="healthyy-test" ></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Healthy Food Subscription Plans</h1>
+    
+    <div class="plan">
+        <h2>Basic Plan - $20/week</h2>
+        <p>Includes a breakfast health mix.</p>
+        <button onclick="checkout('Basic Plan', 20)"><a href="javascript:void(0)" data-cb-type="checkout" data-cb-item-0="Basic-Plan---20week-USD-Weekly" >Subscribe</a></button>
+    </div>
+    
+    <div class="plan">
+        <h2>Advantage Plan - $30/week</h2>
+        <p>Includes everything in the Basic plan.</p>
+        <p>Adds protein biscuits.</p>
+        <p>Offers free delivery.</p>
+        <button onclick="checkout('Advantage Plan', 30)"><a href="javascript:void(0)" data-cb-type="checkout" data-cb-item-0="Advantage-Plan---30week-USD-Weekly" >Subscribe</a></button>
+    </div>
+    
+    <div class="plan">
+        <h2>Amaze Plan - $40/week</h2>
+        <p>Includes everything in the Advantage plan.</p>
+        <p>Adds a GYM membership.</p>
+        <p>Provides phone support.</p>
+        <button onclick="checkout('Amaze Plan', 40)"><a href="javascript:void(0)" data-cb-type="checkout" data-cb-item-0="Amaze-Plan---40week-USD-Weekly" >Subscribe</a></button>
+    </div>
+</div>
+
+<script>
+    function checkout(plan, price) {
+        alert(`You have selected the ${plan} which costs $${price}/week.`);
+        // You can replace this alert with actual checkout logic
+        // like redirecting to a payment gateway or similar.
+    }
+</script>
+
+</body>
+</html>
